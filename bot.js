@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
-const Util = require('discord.js');
-const queue = new Map();
-const ytdl = require('ytdl-core');
-const fs = require('fs');
-const prefix = "$";
+const client = new Discord.Client();
+const prefix = '+'
+client.on('ready', () => {
+  client.user.setStatus('dnd');
+  console.log('Quran is ready!');
+ 
+});
 
 /////////////////////////////////////////////
 /////////////////////////////////////////////
