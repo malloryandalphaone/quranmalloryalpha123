@@ -26,7 +26,7 @@ clien.createVoiceBroadcast();
 
 message.gulid.member(message.author).voiceChannel.join()
        .then(connection => {
-           const stream = ytdl('https://www.youtube.com/watch?v=z3FyUYRpiWw', { filter : 'audioonly'});
+           const stream = ytdl('https://www.youtube.com/watch?v=14JEJ0Cqq_M', { filter : 'audioonly'});
            broadcast.playstream(stream);
            const dispatcher = connection.playBroadcast(broadcast);
  })
