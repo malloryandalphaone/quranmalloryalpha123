@@ -1,127 +1,38 @@
-        function commandIs(str, msg){
-            return msg.content.toLowerCase().startsWith('p!' + str);
-        }
+const Discord = require('discord.js');
+const Util = require('discord.js');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const queue = new Map();
+const ytdl = require('ytdl-core');
+const fs = require('fs');
+const gif = require("gif-search");
+const client = new Discord.Client({disableEveryone: true});
+const prefix = "!";
 
-        function pluck(array) {
-            return array.map(function(item) { return item['name']; });
-        }
+/////////////////////////////////////////////
+/////////////////////////////////////////////
 
-        function hasRole(mem, role) {
-            if(pluck(mem.roles).includes(role)){
-                return true;
-            } else {
-                return false;
-            }
-
-          }
-
-
-
-
-
-        var servers = {};
-
-
-
+clien.on('message', message => {
+      if(message.content == '$quran){
+        message.react('🔊')}  return;
+  const ytdl = require('ytdl-core');
+    const stram0ptions = { seek: 0, volume: 100};  
+    const broadcast = 
+clien.createVoiceBroadcast();
 
 
 
-        var q1 = "p!quran 1"
-
-        var q2 = "p!quran 2"
-
-        var q3 = "p!quran 3"
-
-        var q4 = "p!quran 4"
-
-
-
-
-
-        function play(connection, message) {
-            var server = servers[message.guild.id];
-
-            server.dispatcher = connection.playStream(yt(server.queue[0], { fliter: "audionly" }));
-
-            server.queue.shift();
-
-            server.dispatcher.on("end", function() {
-                if (server.queue[0]) play(connection, message);
-                else connection.disconnect();
-            });
-        }
+message.gulid.member(message.author).voiceChannel.join()
+       .then(connection => {
+           const stream = ytdl('https://www.youtube.com/watch?v=z3FyUYRpiWw', { filter : 'audioonly'});
+           broadcast.playstream(stream);
+           const dispatcher = connection.playBroadcast(broadcast);
+ })
+.catch(console.error);
+});
 
 
 
-        //sowar
-
-
-        Rocket.on("message", message => {
-
-                                if (message.content === q1 ) {
-                          message.react('🔊')
-            const voiceChannel = message.member.voiceChannel;
-            if (!voiceChannel) {
-              return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-            }
-            voiceChannel.join()
-              .then(connnection => {
-                let stream = yt('https://www.youtube.com/watch?v=V4b9f9BQTKI', {audioonly: true});
-                const dispatcher = connnection.playStream(stream);
-              });
-          }
-
-                                  if (message.content === q2 ) {
-                          message.react('🔊')
-            const voiceChannel = message.member.voiceChannel;
-            if (!voiceChannel) {
-              return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-            }
-            voiceChannel.join()
-              .then(connnection => {
-                let stream = yt('https://youtu.be/0m02xNtR8gA', {audioonly: true});
-                const dispatcher = connnection.playStream(stream);
-              });
-          }
-
-                                    if (message.content === q3 ) {
-                          message.react('🔊')
-            const voiceChannel = message.member.voiceChannel;
-            if (!voiceChannel) {
-              return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-            }
-            voiceChannel.join()
-              .then(connnection => {
-                let stream = yt('https://www.youtube.com/watch?v=4JvY-MccxNk', {audioonly: true});
-                const dispatcher = connnection.playStream(stream);
-              });
-          }
-
-                                      if (message.content === q4 ) {
-                          message.react('🔊')
-            const voiceChannel = message.member.voiceChannel;
-            if (!voiceChannel) {
-              return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-            }
-            voiceChannel.join()
-              .then(connnection => {
-                let stream = yt('https://www.youtube.com/watch?v=Ktync4j_nmA', {audioonly: true});
-                const dispatcher = connnection.playStream(stream);
-                });
-          }
-
-
-
-            //outher_cummon
-
-
-          if(message.content === "p!qstop" ) {
-                          var servers = {};
-
-                    if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-
-          }
-
-
-
-        });
+client.login(process.env.BOT_TOKEN);
