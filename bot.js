@@ -14,26 +14,38 @@ const prefix = "!";
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 
-clien.on('message', message => {
-      if(message.content == '$quran){
-        message.react('🔊')}  return;
-  const ytdl = require('ytdl-core');
-    const stram0ptions = { seek: 0, volume: 100};  
-    const broadcast = 
-clien.createVoiceBroadcast();
+client.on('message', message => {
+const yt = require('ytdl-core');
+  if (message.content.startsWith('$quran')) {
+              if(!message.channel.guild) return message.reply('** This command only for servers **');
 
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) {
+      return message.reply(`**من فضلك ادخل روم صوتي**`);
+    }
+    voiceChannel.join()
+      .then(connnection => {
+        let stream = yt('https://www.youtube.com/watch?v=14JEJ0Cqq_M', {audioonly: true});
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
+  
+  if (message.content.startsWith('$stop')) {
+              if(!message.channel.guild) return message.reply('** هذا الامر فقط للسيرفرات **');
 
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) {
+      return message.reply(`**من فضلك ادخل روم صوتي**`);
+    }
+voiceChannel.leave();
+  }
 
-message.gulid.member(message.author).voiceChannel.join()
-       .then(connection => {
-           const stream = ytdl('https://www.youtube.com/watch?v=14JEJ0Cqq_M', { filter : 'audioonly'});
-           broadcast.playstream(stream);
-           const dispatcher = connection.playBroadcast(broadcast);
- })
-.catch(console.error);
 });
 
-    const adminprefix = "quran-";
+    const adminprefix = "$";
 const devs = ['380307890235506698','ID OWNER OF BOT'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
