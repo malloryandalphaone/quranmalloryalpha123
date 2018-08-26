@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '+'
+const prefix = '#'
 client.on('ready', () => {
   client.user.setStatus('dnd');
   console.log('Quran is ready!');
@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
 const yt = require('ytdl-core');
-  if (message.content.startsWith('$quran')) {
+  if (message.content.startsWith('#quran')) {
               if(!message.channel.guild) return message.reply('** This command only for servers **');
 
     const voiceChannel = message.member.voiceChannel;
@@ -21,7 +21,7 @@ const yt = require('ytdl-core');
     }
     voiceChannel.join()
       .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=14JEJ0Cqq_M', {audioonly: true});
+        let stream = yt('https://www.youtube.com/watch?v=rbbpwtd9dNA', {audioonly: true});
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => {
           voiceChannel.leave();
@@ -29,7 +29,7 @@ const yt = require('ytdl-core');
       });
   }
   
-  if (message.content.startsWith('$stop')) {
+  if (message.content.startsWith('#stop')) {
               if(!message.channel.guild) return message.reply('** هذا الامر فقط للسيرفرات **');
 
     const voiceChannel = message.member.voiceChannel;
@@ -41,7 +41,7 @@ voiceChannel.leave();
 
 });
 
-    const adminprefix = "$";
+    const adminprefix = "#";
 const devs = ['380307890235506698','ID OWNER OF BOT'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
