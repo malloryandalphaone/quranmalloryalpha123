@@ -69,7 +69,9 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 const yourID = "380307890235506698";
 const setupCMD = "$gamers"
 let initialMessage = `**\`\`\`fix
-قم بالضغط على الريأكشن للتفعيل\`\`\`\**`;
+قم بالضغط على الريأكشن للتفعيل\`\`\`\**
+
+@everyone | @here`;
 const roles = ["- Verified"];//رتب
 const reactions = ["🔸"];//رياكشن
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
