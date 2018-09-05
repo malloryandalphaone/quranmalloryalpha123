@@ -70,7 +70,7 @@ const yourID = "380307890235506698";
 const setupCMD = "#tf3yl"
 let initialMessage = `**\`\`\`fix
 قم بالضغط على الريأكشن للتفعيل\`\`\`\**`;
-const roles = ["- Verified"];//رتب
+const roles = ["Verified"];//رتب
 const reactions = ["🔸"];//رياكشن
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
 
