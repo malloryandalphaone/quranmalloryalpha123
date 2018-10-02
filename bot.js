@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '$'
 client.on('ready', () => {
-client.channels.get("493787859992576000").join();
+client.channels.get("496334126064992257").join();
 client.user.setStatus('idle');
 console.log('Quran is ready!');
  
