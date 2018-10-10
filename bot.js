@@ -13,7 +13,7 @@ console.log('Quran is ready!');
 
 client.on('message', message => {
 const yt = require('ytdl-core');
-  if (message.content.startsWith('$quran')) {
+  if (message.content.startsWith('#quran')) {
               if(!message.channel.guild) return message.reply('** This command only for servers **');
 
     const voiceChannel = message.member.voiceChannel;
@@ -30,7 +30,7 @@ const yt = require('ytdl-core');
       });
   }
   
-  if (message.content.startsWith('$stop')) {
+  if (message.content.startsWith('#stop')) {
               if(!message.channel.guild) return message.reply('** هذا الامر فقط للسيرفرات **');
 
     const voiceChannel = message.member.voiceChannel;
