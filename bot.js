@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '$'
+const prefix = '#'
 client.on('ready', () => {
 client.channels.get("500977914133610497").join();
 client.user.setStatus('idle');
-console.log('Quran is ready!');
+console.log('Quran , Elite Skill Is Ready !');
  
 });
 
