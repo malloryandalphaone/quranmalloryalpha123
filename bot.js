@@ -22,7 +22,7 @@ const yt = require('ytdl-core');
     }
     voiceChannel.join()
       .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=rbbpwtd9dNA', {audioonly: true});
+        let stream = yt('https://www.youtube.com/watch?v=dMIOYHVowUc', {audioonly: true});
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => {
           voiceChannel.leave();
