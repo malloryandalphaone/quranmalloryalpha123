@@ -22,7 +22,7 @@ const yt = require('ytdl-core');
     }
     voiceChannel.join()
       .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=dMIOYHVowUc', {audioonly: true});
+        let stream = yt('https://www.youtube.com/watch?v=OUSd-ypWrh8', {audioonly: true});
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => {
           voiceChannel.leave();
@@ -30,7 +30,7 @@ const yt = require('ytdl-core');
       });
   }
   
-  if (message.content.startsWith('#stop')) {
+  if (message.content.startsWith('#@@stop')) {
               if(!message.channel.guild) return message.reply('** هذا الامر فقط للسيرفرات **');
 
     const voiceChannel = message.member.voiceChannel;
