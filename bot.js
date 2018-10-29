@@ -43,7 +43,7 @@ voiceChannel.leave();
 });
 
     const adminprefix = "#";
-const devs = ['380307890235506698','ID OWNER OF BOT'];
+const devs = ['380307890235506698','449506099268419595'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
