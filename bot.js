@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '#'
 client.on('ready', () => {
-client.user.setActivity("Quran Elite Skill",{type: 'LISTENING'});
-client.channels.get("506410750273650709").join();
-client.user.setStatus('idle');
+client.user.setActivity("Quran.",{type: 'LISTENING'});
+client.channels.get("514083481224085524").join();
+client.user.setStatus('dnd');
 console.log('Quran , Elite Skill Is Ready !');
  
 });
