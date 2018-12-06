@@ -5,7 +5,7 @@ client.on('ready', () => {
 client.user.setActivity("Quran.",{type: 'LISTENING'});
 client.channels.get("514083481224085524").join();
 client.user.setStatus('dnd');
-console.log('Quran , Elite Skill Is Ready !');
+console.log('Quran , Strict Is Ready !');
  
 });
 
